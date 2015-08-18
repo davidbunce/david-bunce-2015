@@ -18,6 +18,7 @@ $sage_includes = [
   'lib/assets.php',                // Scripts and stylesheets
   'lib/titles.php',                // Page titles
   'lib/extras.php',                // Custom functions
+  'lib/types/portfolio-type.php',  // Portfolio CPT
 ];
 
 foreach ($sage_includes as $file) {
