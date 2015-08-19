@@ -2,21 +2,40 @@
 	@include susy-clearfix();
 	background: $black;
 
-	position: fixed;
-	width: 100%;
-	top: 0;
-	z-index: 200;
+	@include for(tablets) {
+		position: fixed;
+		width: 100%;
+		top: 0;
+		z-index: 200;
+
+		// If the Wordpress menu bar is showing, we need to move everything down substantially 
+		.admin-bar & {
+			top: 30px;
+
+			@include for(mobile-only) {
+				top: 40px;
+			}
+		}
+	}
 
 	border-bottom: 2px #FFF solid;
 	box-shadow: 0px 0px 6px #aaa;
 
-	// If the Wordpress menu bar is showing, we need to move everything down substantially 
-	.admin-bar & {
-		top: 30px;
-	}
+	
 
 	.container {
 		position: relative;
+	}
+
+	&__trigger-button {
+		@include make-button();
+		@include make-serif();
+		color: #FFF;
+		border: 1px solid #FFF;
+		background: transparent;
+		border-radius: 4px;
+		margin: 10px 0;
+		padding: 5px 8px;
 	}
 
 	&__menu-button {
@@ -35,6 +54,11 @@
 		text-shadow: 1px 1px 1px $black;
 		box-shadow: 0px 0px 6px #aaa;
 
+
+		@include for(mobile-only) {
+			display: none;
+		}
+
 		&:hover {
 			background: $green-2;
 			color: #FFF;
@@ -46,11 +70,27 @@
 		margin: 0;
 		padding-left: 0px;
 		@include span(10);
-		display: flex;
+
+		@include for(mobile-only) {
+			height: 0px;
+			overflow: hidden;
+
+			&--expanded {
+				height: auto;
+			}
+		}
+		
+		@include for(tablet) {
+			display: flex;
+		}
 
 		li {
 			list-style-type: none;
 			padding: 0;
+		}
+
+		.current-menu-item a {
+			color: $green-2;
 		}
 
 		a {
@@ -65,6 +105,7 @@
 			&:hover {
 				color: $yellow;
 			}
+
 		}
 	}
 }

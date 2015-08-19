@@ -1,5 +1,5 @@
 $susy: (
-	math: static,
+	math: fluid,
 	columns: 12,
 	column-width: 80px,
 	gutters: 0.33, 
@@ -9,91 +9,10 @@ body {
 	background: url(../images/background.jpg);
   background-attachment: fixed;
   line-height: 1.43em;
-}
 
-@mixin rem($property, $values) {
-  $px : ();
-  $rem: ();
-  
-  @each $value in $values {
-   
-    @if $value == 0 or $value == auto {
-      $px : append($px , $value);
-      $rem: append($rem, $value);
-    }
-    
-    @else { 
-      $unit: unit($value);
-      $val: parseInt($value);
-      
-      @if $unit == "px" {
-        $px : append($px,  $value);
-        $rem: append($rem, ($val / 10 + rem));
-      }
-      
-      @if $unit == "rem" {
-        $px : append($px,  ($val * 10 + px));
-        $rem: append($rem, $value);
-      }
-    }
-  }
-  
-  @if $px == $rem {
-    #{$property}: $px;
-  } @else {
-    #{$property}: $px;
-    #{$property}: $rem;
+  @include for(mobile-only) {
+    background-image: url(../images/background-portrait.jpg);
   }
 }
 
-@mixin for($breakpoint) {
 
-  @if $breakpoint == "mobile" {
-    @media (min-width: 0px) {
-      @content;
-    }
-  }
-  
-  @else if $breakpoint == "mobile-only" {
-    @media (min-width: 0px) and (max-width: $screen-xs) {
-      @content;
-    }
-  }  
-  
-  @else if $breakpoint == "tablet" {
-    @media (min-width: $screen-xs) {
-      @content;
-    }
-  }
-  
-  @else if $breakpoint == "tablet-only" {
-    @media (min-width: $screen-xs) and (max-width: $screen-sm) {
-      @content;
-    }
-  }  
-  
-  @else if $breakpoint == "handheld-only" {
-    @media (min-width: 0px) and (max-width: $screen-sm) {
-      @content;
-    }
-  }    
- 
-  @else if $breakpoint == "desktop" {
-    @media (min-width: $screen-sm) {
-      @content;
-    }
-  }
-  
-  @else if $breakpoint == "desktop-only" {
-    @media (min-width: $screen-sm) and (max-width: $screen-lg) {
-      @content;
-    }
-  }  
- 
-  @else if $breakpoint == "large-desktop" {
-    @media (min-width: $screen-lg) {
-      @content;
-    }
-  }
-
-}

@@ -8,9 +8,19 @@
 	&__text {
 		@include span(8 last);
 
+		@include for(mobile-only) {
+			@include span(12);
+		}
+
 		h1 {
 			//font-size: 52px;
-			@include rem(font-size, 52px);
+			@include rem(font-size, 40px);
+			@include rem(line-height, 55px);
+
+			@include for(tablet) {
+				@include rem(font-size, 52px);
+				@include rem(line-height, 55px);
+			}
 			font-weight: bold;
 			color: $black;
 
@@ -24,7 +34,13 @@
 		}
 
 		p {
-			@include rem(font-size, 36px);
+			@include rem(font-size, 28px);
+			@include rem(line-height, 36px);
+
+			@include for(tablet) {
+				@include rem(font-size, 36px);
+				@include rem(line-height, 45px);
+			}
 			color: $black;
 		}
 
@@ -39,5 +55,9 @@
 
 	&__image {
 		@include span(4);
+
+		@include for(mobile-only) {
+			@include span(12);
+		}
 	}
 }

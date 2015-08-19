@@ -15,6 +15,8 @@ function body_class($classes) {
     }
   }
 
+  $classes[] = 'wf-pre-loading';
+
   // Add class if sidebar is active
   if (Config\display_sidebar()) {
     $classes[] = 'sidebar-primary';

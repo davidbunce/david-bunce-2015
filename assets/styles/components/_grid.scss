@@ -1,18 +1,46 @@
 .container {
 	@include container();
+	padding: 0 10px;
+
+	@include for(desktop) {
+		padding: 0px;
+	}
 }
 
 // Grid system
 .main {
-	margin-top: 100px;
-	@include susy-clearfix();
+	margin-top: 20px;
 	@include span(12);
+
+	@include for(tablet) {
+		margin-top: 100%;
+		@include span(8);
+		@include pre(2);
+	}
+	@include susy-clearfix();
+	
+
   	//@include make-sm-column($main-sm-columns);
   	.sidebar-primary & {
     	@include span(9);
+    	@include pre(0);
   	}
+
+  	.home & {
+  		@include span(12);
+  		@include pre(0);
+  	}
+
+  	img { 
+		max-width: 100%;
+		height: auto;
+	}
 }
 .sidebar {
-	margin-top: 100px;
+	margin-top: 20px;
+
+	@include for(tablet) {
+		margin-top: 100%;
+	}
    	@include span(3 last);
 }

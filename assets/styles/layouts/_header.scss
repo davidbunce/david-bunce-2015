@@ -1,10 +1,20 @@
 .main-header {
 	position: relative;
-	padding-top: 60px;
+	padding-top: 20px;
 	
-	.admin-bar & {
-		padding-top: 90px;
+	@include for(tablet) {
+		padding-top: 60px;
 	}
 
-	
+	.brand {
+		@include for(mobile-only) {
+			width: 80%;
+			display: block;
+		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
 }

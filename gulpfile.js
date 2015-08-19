@@ -187,6 +187,13 @@ gulp.task('styles', ['wiredep'], function() {
     .pipe(writeToManifest('styles'));
 });
 
+gulp.task('copyflags', function() {
+   gulp.src('./bower_components/flag-css/dist/flags/*.{png,svg}')
+   .pipe(gulp.dest('./dist/images/flags'));
+   gulp.src('./bower_components/flag-css/dist/flags/png/*.{png,svg}')
+   .pipe(gulp.dest('./dist/images/flags/png'));
+});
+
 // ### Scripts
 // `gulp scripts` - Runs JSHint then compiles, combines, and optimizes Bower JS
 // and project JS.
@@ -269,6 +276,7 @@ gulp.task('build', function(callback) {
   runSequence('styles',
               'scripts',
               ['fonts', 'images'],
+              'copyflags',
               callback);
 });
 

@@ -1,5 +1,8 @@
 <nav role="navigation" class="header-nav">
     <div class="container">
+        <button class="header-nav__trigger-button">
+            Menu
+        </button>
         <?php
         if (has_nav_menu('primary_navigation')) :
             wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'header-nav__list']);

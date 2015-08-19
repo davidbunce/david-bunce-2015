@@ -1,3 +1,23 @@
 @mixin make-button() {
 	border: 0px;
 }
+
+.btn {
+	@include make-button();
+	padding: 5px 20px; 
+	border-radius:5px;
+	display: inline-block;
+
+	&--read-more {
+		color: #FFF;
+		background: $green-2;
+		border: 5px solid $green-1;
+		text-decoration: none;
+		@include make-sans-serif();
+
+		&:hover {
+			color: #FFF;
+			background: darken($green-2, 5%);
+		}
+	}
+}

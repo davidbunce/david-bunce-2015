@@ -32,8 +32,8 @@
 	</ul>
 </aside>
 
-<section class="front-page-portfolio">
+<!-- <section class="front-page-portfolio">
 	<h2 class="featured-heading featured-heading--green">
 		Recent work
 	</h2>
-</section>
+</section> -->

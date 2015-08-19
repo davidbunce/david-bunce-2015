@@ -5,6 +5,10 @@
 	&__navigation {
 		@include span(4);
 
+		@include for(mobile-only) {
+			@include span(12);
+		}
+
 		ul {
 			padding-left: 0px;
 		}

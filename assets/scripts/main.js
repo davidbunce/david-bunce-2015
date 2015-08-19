@@ -21,7 +21,10 @@
         // JavaScript to be fired on all pages
         
         WebFontConfig = {
-          google: { families: [ 'Amatic+SC:400,700:latin', 'Merriweather:400,700,400italic,700italic:latin' ] }
+          google: { families: [ 'Amatic+SC:400,700:latin', 'Merriweather:400,700,400italic,700italic:latin' ] },
+          active: function() {
+            $('body').removeClass('wf-pre-loading');
+          },
         };
         (function() {
           var wf = document.createElement('script');
@@ -32,6 +35,10 @@
           var s = document.getElementsByTagName('script')[0];
           s.parentNode.insertBefore(wf, s);
         })();
+
+        $('.header-nav__trigger-button').on('click', function() {
+          $('.header-nav__list').toggleClass('header-nav__list--expanded');
+        });
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
