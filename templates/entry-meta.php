@@ -1,2 +1,4 @@
-<time class="updated" datetime="<?= get_post_time('c', true); ?>"><?= get_the_date(); ?></time>
-<p class="byline author vcard"><?= __('By', 'sage'); ?> <a href="<?= get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn"><?= get_the_author(); ?></a></p>
+<time class="updated" datetime="<?= get_post_time('c', true); ?>">Published <?= get_the_date(); ?></time>
+<p class="byline author vcard">
+	<img src="<?php echo get_template_directory_uri(); ?>/dist/images/david-avatar-small.png" alt="Small picture of David" />
+</p>

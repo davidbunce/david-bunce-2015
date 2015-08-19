@@ -8,10 +8,9 @@
   "private": true,
   "dependencies": {
     "modernizr": "2.8.2",
-    "modularized-normalize-scss": "~3.0.3",
+    "normalize-scss": "~3.0.3",
     "susy": "2.2.1",
     "flag-css": "~0.0.2"
-    
   },
   "overrides": {
     "modernizr": {

@@ -4,11 +4,15 @@
 
 // Grid system
 .main {
-  //@include make-sm-column($main-sm-columns);
-  .sidebar-primary & {
-    //@include make-sm-column($main-sm-columns - $sidebar-sm-columns);
-  }
+	margin-top: 100px;
+	@include susy-clearfix();
+	@include span(12);
+  	//@include make-sm-column($main-sm-columns);
+  	.sidebar-primary & {
+    	@include span(9);
+  	}
 }
 .sidebar {
-  //@include make-sm-column($sidebar-sm-columns);
+	margin-top: 100px;
+   	@include span(3 last);
 }

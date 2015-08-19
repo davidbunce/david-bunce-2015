@@ -1,0 +1,22 @@
+.main-footer {
+	@include susy-clearfix();
+	margin-top: 60px;
+
+	&__navigation {
+		@include span(4);
+
+		ul {
+			padding-left: 0px;
+		}
+
+		li {
+			list-style-type: none;
+			@include rem(line-height, 22px);
+			@include rem(font-size, 14px);
+		}
+
+		a {
+			text-decoration: none;
+		}
+	}
+}

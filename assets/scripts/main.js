@@ -19,8 +19,9 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+        
         WebFontConfig = {
-          google: { families: [ 'Amatic+SC:400,700:latin' ] }
+          google: { families: [ 'Amatic+SC:400,700:latin', 'Merriweather:400,700,400italic,700italic:latin' ] }
         };
         (function() {
           var wf = document.createElement('script');

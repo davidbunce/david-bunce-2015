@@ -1,3 +1,66 @@
-h1, h2, h3, h4, h5 {
-	font-family: 'Amatic SC', cursive;
+a {
+	color: $green-1;
+
+	&:hover {
+		color: $green-2;
+	}
 }
+
+//////////////////////////////////////////////////////////////////////
+// FOUT prevention
+//////////////////////////////////////////////////////////////////////
+.wf-loading, .wf-loading-holding {
+	h1, h2, h3, h4, h5, p, li, button, time {
+		opacity: 0;
+	}
+}
+
+//////////////////////////////////////////////////////////////////////
+// Headings
+//////////////////////////////////////////////////////////////////////
+
+h1, h2, h3, h4, h5 {
+	@include make-sans-serif();
+}
+
+h1 {
+	@include rem(font-size, 40px);
+}
+
+h2 {
+	@include rem(font-size, 34px);
+}
+
+h3 {
+	@include rem(font-size, 28px);
+}
+
+.featured-heading {
+	border-top: 2px solid;
+	border-bottom: 2px solid;
+	padding: 10px 0px;
+
+	width: 60%;
+	margin: 0 auto;
+	text-align: center;
+
+	&--orange {
+		color: $orange;
+	}
+
+	&--green {
+		color: $green-1;
+	}
+
+	&--full-width {
+		width: 100%;
+	}
+}
+
+//////////////////////////////////////////////////////////////////////
+// Block elements
+//////////////////////////////////////////////////////////////////////
+p, li, time {
+	@include make-serif();
+}
+

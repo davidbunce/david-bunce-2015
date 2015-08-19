@@ -1,0 +1,42 @@
+article {
+	@include rem(font-size, 18px);
+	@include rem(line-height, 29px);
+
+	header {
+		@include susy-clearfix();
+		padding-bottom: 10px;
+
+		time {
+			padding-top: 20px;
+			@include span(6);
+			@include rem(font-size, 13px);
+			@include susy-clearfix();
+		}
+
+		.byline {
+			@include span(3 last);
+			text-align: right;
+			@include susy-clearfix();
+		}
+
+
+	}
+}
+
+.hentry {
+	border-bottom: 3px dashed $orange;
+	padding-bottom: 30px;
+	margin-bottom: 30px;
+}
+
+.entry-title {
+	margin-bottom: 0px; 
+
+	@include rem(font-size, 38px);
+
+	a {
+		color: $black;
+		text-decoration: none; 
+	}
+}
+

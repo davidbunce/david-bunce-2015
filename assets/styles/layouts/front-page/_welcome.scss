@@ -1,5 +1,5 @@
 .front-page-welcome {
-	margin-top: 80px;
+	@include susy-clearfix();
 
 	p {
 		font-family: 'Amatic SC', cursive;
@@ -12,6 +12,7 @@
 			//font-size: 52px;
 			@include rem(font-size, 52px);
 			font-weight: bold;
+			color: $black;
 
 			strong {
 				color: $green-1;
@@ -24,6 +25,7 @@
 
 		p {
 			@include rem(font-size, 36px);
+			color: $black;
 		}
 
 		.flag {

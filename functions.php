@@ -29,3 +29,17 @@ foreach ($sage_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+
+//////////////////////////////////////////////////////////////
+// WPML
+//////////////////////////////////////////////////////////////
+function davidbunce_language_selector_header(){
+    $languages = icl_get_languages('skip_missing=0&orderby=code');
+    if(!empty($languages)){
+        foreach($languages as $l){
+            if(!$l['active']) echo '<a href="'.$l['url'].'">';
+            echo $l['native_name'];
+            if(!$l['active']) echo '</a>';
+        }
+    }
+}

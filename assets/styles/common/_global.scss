@@ -7,6 +7,8 @@ $susy: (
 
 body {
 	background: url(../images/background.jpg);
+  background-attachment: fixed;
+  line-height: 1.43em;
 }
 
 @mixin rem($property, $values) {

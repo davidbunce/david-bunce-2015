@@ -1,0 +1,17 @@
+.front-page-logos {
+	@include susy-clearfix();
+	margin-top: 60px;
+
+	&__list {
+		display: flex;
+		justify-content: center;
+		padding-left: 0px; 
+		@include span(12);
+		margin-top: 20px;
+	}
+
+	li {
+		list-style-type: none;
+		padding: 10px;
+	}
+}
