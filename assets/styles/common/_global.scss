@@ -8,6 +8,7 @@ $susy: (
 body {
 	background: url(../images/background.jpg);
   background-attachment: fixed;
+  background-size: cover;
   line-height: 1.43em;
 
   @include for(mobile-only) {

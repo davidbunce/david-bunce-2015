@@ -2,7 +2,7 @@
 	@include container();
 	padding: 0 10px;
 
-	@include for(desktop) {
+	@include for(large-desktop) {
 		padding: 0px;
 	}
 }
@@ -13,7 +13,7 @@
 	@include span(12);
 
 	@include for(tablet) {
-		margin-top: 100%;
+		margin-top: 100px;
 		@include span(8);
 		@include pre(2);
 	}
@@ -40,7 +40,7 @@
 	margin-top: 20px;
 
 	@include for(tablet) {
-		margin-top: 100%;
+		margin-top: 100px;
 	}
    	@include span(3 last);
 }
