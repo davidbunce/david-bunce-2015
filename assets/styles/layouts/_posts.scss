@@ -19,9 +19,30 @@ article {
 			@include span(3 last);
 			text-align: right;
 			@include susy-clearfix();
+
+
 		}
 
+	}
+}
 
+.featured-heading {
+	&__image {
+		margin-top: 20px;
+
+		img {
+			width: 100%;
+			max-width: 100%;
+			height: auto;
+		}
+	}
+}
+
+.blog header {
+	.byline {
+		@include for(desktop) {
+			margin-top: -30px;
+		}
 	}
 }
 
@@ -40,5 +61,9 @@ article {
 		color: $black;
 		text-decoration: none; 
 	}
+}
+
+.posts-navigation {
+	@include susy-clearfix();
 }
 

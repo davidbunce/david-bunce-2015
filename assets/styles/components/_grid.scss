@@ -36,6 +36,19 @@
 		height: auto;
 	}
 }
+
+.post-type-archive-portfolio_item {
+	.main {
+		@include for(tablet) {
+			@include span(12);
+			@include pre(0);
+		}
+	}
+
+	.portfolio-item {
+		margin-top: 420px;
+	}
+}
 .sidebar {
 	margin-top: 20px;
 

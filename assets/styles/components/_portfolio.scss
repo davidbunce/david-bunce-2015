@@ -1,0 +1,28 @@
+.portfolio-item {
+	@include span(4 of 12);
+	height: 350px;
+	margin-bottom: 30px;
+
+	@include for(tablet) {
+		&:nth-of-type(3n) {
+			@include span(4 of 12 last);
+		}
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+		border: $yellow 5px solid;
+	}
+
+	&__title {
+		@include make-serif();
+		@include rem('font-size', 18px);
+		margin-bottom: 10px;
+	}
+
+	&__meta {
+		@include make-serif();
+		@include rem('font-size', 13px);
+	}
+}

@@ -4,3 +4,8 @@
 
 	
 }
+
+.page-flow {
+	margin: 20px 0px;
+	@include susy-clearfix();
+}

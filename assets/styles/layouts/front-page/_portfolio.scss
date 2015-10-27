@@ -1,0 +1,11 @@
+.front-page-portfolio {
+	margin-top: 30px;
+	
+
+	&__items {
+		@include susy-clearfix();
+		margin-top: 20px;
+	}
+
+
+}
